@@ -7,11 +7,17 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "gatsby develop -p 3000 --host 0.0.0.0",
+    "start": "yarn develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "prettier": "prettier --write --config ./configs/prettier.config.js src/**/*.jsx src/**/*.js src/**/*.scss"
+  },
+  "lint-staged": {
+    "*.[jsx|js|scss]": [
+      "npm run prettier"
+    ]
   },
   "dependencies": {
     "gatsby": "^2.26.1",
@@ -29,5 +35,9 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "sass": "^1.32.4"
+  },
+  "devDependencies": {
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
   }
 }
