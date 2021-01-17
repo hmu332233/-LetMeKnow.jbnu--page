@@ -37,5 +37,18 @@ module.exports = {
       },
       __key: 'images',
     },
+    {
+      resolve: 'gatsby-plugin-alias-imports',
+      options: {
+        alias: {
+          '@containers': 'src/containers',
+          '@components': 'src/components',
+          '@pages': 'src/pages',
+          '@utils': 'src/utils',
+          '@images': 'src/images',
+        },
+        extensions: ['js', 'jsx'],
+      },
+    },
   ],
 };
