@@ -6,14 +6,12 @@ import logo from '@images/logo.png';
 function Header(props) {
   return (
     <div className="flex justify-center py-2">
-      <img className="h-16" src={logo} />
+      <img className="h-14" src={logo} />
     </div>
   );
 }
 
-Header.propTypes = {
-};
-Header.defaultProps = {
-};
+Header.propTypes = {};
+Header.defaultProps = {};
 
 export default Header;
