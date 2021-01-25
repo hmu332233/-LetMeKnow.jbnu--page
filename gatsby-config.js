@@ -41,6 +41,7 @@ module.exports = {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
+          '@hooks': 'src/hooks',
           '@containers': 'src/containers',
           '@components': 'src/components',
           '@pages': 'src/pages',
