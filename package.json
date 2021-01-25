@@ -15,7 +15,7 @@
     "prettier": "prettier --write --config ./configs/prettier.config.js src/**/*.jsx src/**/*.js src/**/*.scss"
   },
   "lint-staged": {
-    "*.jsx": [
+    "*.js(x)?": [
       "prettier --write --config ./configs/prettier.config.js"
     ]
   },
