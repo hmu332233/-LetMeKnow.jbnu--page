@@ -47,13 +47,12 @@ function Select({ items, selectedValue, onChange }) {
   const ref = useRef();
   useOnClickOutside(ref, () => setIsOpen(false));
 
-  const selectedItem = items.find((item) => item.value === selectedValue);
-
   const handleClickItem = (value) => {
     onChange(value);
     setIsOpen(false);
   };
 
+  const selectedItem = items.find((item) => item.value === selectedValue);
   return (
     <div className="mt-1 relative" ref={ref}>
       <button

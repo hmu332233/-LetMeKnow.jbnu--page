@@ -5,11 +5,17 @@ import Select from '@components/Select';
 import TabHeader from '@components/TabHeader';
 import MenuList from '@components/MenuList';
 
+import { navigate } from 'gatsby';
+
+const handleSelectItem = (value) => navigate(`/stores/${value}`);
 // markup
-const IndexPage = () => {
+const IndexPage = (props) => {
   return (
     <Layout>
-      <Select onChange={console.log} />
+      <Select
+        selectedValue={props.pageContext.store}
+        onChange={handleSelectItem}
+      />
       <TabHeader />
       <MenuList />
     </Layout>
