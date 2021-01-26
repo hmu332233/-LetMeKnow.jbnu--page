@@ -5,5 +5,5 @@
  */
 
 // You can delete this file if you're not using it
-
+import '@fontsource/noto-sans-kr';
 import './src/styles/global.css';

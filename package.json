@@ -25,6 +25,7 @@
     }
   },
   "dependencies": {
+    "@fontsource/noto-sans-kr": "^4.1.0",
     "autoprefixer": "^10.2.1",
     "classnames": "^2.2.6",
     "gatsby": "^2.26.1",
