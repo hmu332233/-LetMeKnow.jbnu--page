@@ -52,7 +52,10 @@ function Select({ items, selectedValue, onChange }) {
     setIsOpen(false);
   };
 
-  const selectedItem = items.find((item) => item.value === selectedValue);
+  const selectedItem = items.find((item) => item.value === selectedValue) || {
+    text: '',
+    value: '',
+  };
   return (
     <div className="mt-1 relative" ref={ref}>
       <button
