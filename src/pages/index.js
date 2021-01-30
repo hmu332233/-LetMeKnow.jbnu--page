@@ -6,11 +6,11 @@ import StoreMenuList from '@containers/StoreMenuList';
 
 // markup
 const IndexPage = (props) => {
-  const store = props.pageContext.store.value;
+  const store = props.pageContext.store;
   return (
     <Layout>
-      <StoreSelect selectedValue={store.value} />
-      <StoreMenuList />
+      <StoreSelect value={store.value} />
+      <StoreMenuList value={store.value} />
     </Layout>
   );
 };

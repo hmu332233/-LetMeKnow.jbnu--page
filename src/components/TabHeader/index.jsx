@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import classnames from 'classnames';
 
-function TabItem({ children, active }) {
+function TabItem({ children, active, value, onClick }) {
   const defultClassName =
     'py-3 w-1/2 justify-center border-b-2 title-font font-medium inline-flex items-center leading-none';
   const activeClassName =
@@ -11,35 +11,56 @@ function TabItem({ children, active }) {
   const inactiveClassName =
     'border-gray-200 hover:text-gray-900 tracking-wider';
 
+  const handleClickItem = () => onClick(value);
+  const handleEnter = (e) => {
+    if (e.key === 'Enter') {
+      onClick(value);
+    }
+  };
+
   return (
-    <a
+    <div
       className={classnames(
         defultClassName,
         active ? activeClassName : inactiveClassName
       )}
+      onClick={handleClickItem}
+      onKeyDown={handleEnter}
+      role="button"
+      tabIndex="0"
     >
       {children}
-    </a>
+    </div>
   );
 }
 
-function TabHeader(props) {
+function TabHeader({ items, selectedValue, onItemClick }) {
   return (
     <section className="text-gray-600 body-font">
       <div className="flex justify-center mb-20">
-        <TabItem active>월</TabItem>
-        <TabItem>화</TabItem>
-        <TabItem>수</TabItem>
-        <TabItem>목</TabItem>
-        <TabItem>금</TabItem>
-        <TabItem>토</TabItem>
-        <TabItem>일</TabItem>
+        {items.map((item) => (
+          <TabItem
+            active={item.value === selectedValue}
+            value={item.value}
+            onClick={onItemClick}
+          >
+            {item.text}
+          </TabItem>
+        ))}
       </div>
     </section>
   );
 }
 
-TabHeader.propTypes = {};
+TabHeader.propTypes = {
+  selectedValue: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      value: PropTypes.string,
+    })
+  ).isRequired,
+};
 TabHeader.defaultProps = {};
 
 export default TabHeader;

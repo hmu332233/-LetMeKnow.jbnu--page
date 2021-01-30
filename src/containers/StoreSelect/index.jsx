@@ -26,7 +26,7 @@ function StoreSelect(props) {
 
   return (
     <Select
-      selectedValue={props.selectedValue}
+      selectedValue={props.value}
       items={items}
       onChange={handleSelectItem}
     />
@@ -34,7 +34,7 @@ function StoreSelect(props) {
 }
 
 StoreSelect.propTypes = {
-  selectedValue: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
 };
 StoreSelect.defaultProps = {};
 

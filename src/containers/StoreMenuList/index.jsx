@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import TabHeader from '@components/TabHeader';
+import DayTabHeader from '@containers/DayTabHeader';
 import MenuList from '@components/MenuList';
 
 class StoreMenuList extends React.Component {
@@ -10,13 +10,23 @@ class StoreMenuList extends React.Component {
     this.state = {
       allMenus: [],
       menus: [],
+      selectedDay: 'mon',
     };
+
+    this.handleClickTabItem = this.handleClickTabItem.bind(this);
+  }
+
+  handleClickTabItem(value) {
+    this.setState({ selectedDay: value });
   }
 
   render() {
     return (
       <>
-        <TabHeader />
+        <DayTabHeader
+          selectedValue={this.state.selectedDay}
+          onItemClick={this.handleClickTabItem}
+        />
         <MenuList />
       </>
     );
