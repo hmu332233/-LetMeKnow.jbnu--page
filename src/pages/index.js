@@ -2,16 +2,15 @@ import React from 'react';
 
 import Layout from '@components/Layout';
 import StoreSelect from '@containers/StoreSelect';
-import TabHeader from '@components/TabHeader';
-import MenuList from '@components/MenuList';
+import StoreMenuList from '@containers/StoreMenuList';
 
 // markup
 const IndexPage = (props) => {
+  const store = props.pageContext.store.value;
   return (
     <Layout>
-      <StoreSelect selectedValue={props.pageContext.store.value} />
-      <TabHeader />
-      <MenuList />
+      <StoreSelect selectedValue={store.value} />
+      <StoreMenuList />
     </Layout>
   );
 };
