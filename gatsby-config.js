@@ -47,6 +47,7 @@ module.exports = {
           '@pages': 'src/pages',
           '@utils': 'src/utils',
           '@images': 'src/images',
+          '@api': 'src/api',
         },
         extensions: ['js', 'jsx'],
       },

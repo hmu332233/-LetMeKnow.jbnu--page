@@ -30,26 +30,7 @@ MenuList.propTypes = {
   ),
 };
 MenuList.defaultProps = {
-  menus: [
-    {
-      subTitle: '참빛관',
-      title: '아침',
-      menu:
-        '쌀밥\n두부김치국\n순두부계란찜\n매콤대구채조림\n열무된장나물\n깍두기\n\n(간편식) 소보루빵\n씨리얼\n흰우유',
-    },
-    {
-      subTitle: '참빛관',
-      title: '점심',
-      menu:
-        '쌀밥\n두부김치국\n순두부계란찜\n매콤대구채조림\n열무된장나물\n깍두기\n\n(간편식) 소보루빵\n씨리얼\n흰우유',
-    },
-    {
-      subTitle: '참빛관',
-      title: '저녁',
-      menu:
-        '쌀밥\n두부김치국\n순두부계란찜\n매콤대구채조림\n열무된장나물\n깍두기\n\n(간편식) 소보루빵\n씨리얼\n흰우유',
-    },
-  ],
+  menus: [],
 };
 
 export default MenuList;
