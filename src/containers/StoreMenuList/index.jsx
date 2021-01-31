@@ -5,6 +5,7 @@ import MemuApi from '@api/MenuApi';
 
 import DayTabHeader from '@containers/DayTabHeader';
 import MenuList from '@components/MenuList';
+import LoadAnimation from '@components/LoadAnimation';
 
 import _mapValues from 'lodash/mapValues';
 class StoreMenuList extends React.Component {
@@ -14,6 +15,7 @@ class StoreMenuList extends React.Component {
       allMenus: {},
       menus: [],
       selectedDay: 'mon',
+      isLoading: true,
     };
 
     this.handleClickTabItem = this.handleClickTabItem.bind(this);
@@ -25,13 +27,25 @@ class StoreMenuList extends React.Component {
   }
 
   handleClickTabItem(value) {
-    this.setState((prevState) => ({
-      selectedDay: value,
-      menus: prevState.allMenus[value] || [],
-    }));
+    this.setState(
+      {
+        selectedDay: value,
+        isLoading: true,
+      },
+      () => {
+        setTimeout(() => {
+          this.setState((prevState) => ({
+            menus: prevState.allMenus[value] || [],
+            isLoading: false,
+          }));
+        }, 300);
+      }
+    );
   }
 
   fetchMenus() {
+    this.setState({ isLoading: true });
+
     MemuApi.listMenus({ store: this.props.value }).then((res) => {
       const allMenus = _mapValues(res.data, (menus) => {
         return menus.map((menu) => ({
@@ -43,6 +57,7 @@ class StoreMenuList extends React.Component {
       this.setState({
         allMenus,
         menus: allMenus[this.state.selectedDay] || [],
+        isLoading: false,
       });
     });
   }
@@ -54,7 +69,9 @@ class StoreMenuList extends React.Component {
           selectedValue={this.state.selectedDay}
           onItemClick={this.handleClickTabItem}
         />
-        <MenuList menus={this.state.menus} />
+        <LoadAnimation loading={this.state.isLoading}>
+          <MenuList menus={this.state.menus} />
+        </LoadAnimation>
       </>
     );
   }
