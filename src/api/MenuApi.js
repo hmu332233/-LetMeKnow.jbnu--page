@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const proxyAxios = axios.create({
-  baseURL: process.env.API_URL,
+  baseURL: process.env.API_HOST || '',
 });
 
 const listMenus = ({ store }) => {
