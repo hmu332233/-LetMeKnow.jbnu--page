@@ -1,7 +1,7 @@
 const STORES = [
   { name: '참빛관', value: 'cham' },
   { name: '직영관', value: 'basic' },
-  { name: '특성화 캠퍼스', value: 'characterization' },
+  { name: '특성화 캠퍼스', value: 'special' },
   { name: '진수당', value: 'jinsu' },
   { name: '의대', value: 'medi' },
   { name: '후생관', value: 'hu' },
