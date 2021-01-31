@@ -36,8 +36,8 @@ function TabItem({ children, active, value, onClick }) {
 
 function TabHeader({ items, selectedValue, onItemClick }) {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="flex justify-center mb-20">
+    <section className="text-gray-600 body-font mb-20">
+      <div className="flex justify-center">
         {items.map((item) => (
           <TabItem
             active={item.value === selectedValue}

@@ -57,7 +57,7 @@ function Select({ items, selectedValue, onChange }) {
     value: '',
   };
   return (
-    <div className="mt-1 relative" ref={ref}>
+    <div className="mt-1 relative mb-10" ref={ref}>
       <button
         type="button"
         aria-haspopup="listbox"

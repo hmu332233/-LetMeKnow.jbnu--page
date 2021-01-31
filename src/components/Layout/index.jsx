@@ -10,7 +10,9 @@ function Layout(props) {
       <Header />
       <main>
         <section className="text-gray-700 body-font overflow-hidden">
-          <div className="container flex flex-col px-5 py-24 mx-auto max-w-screen-sm">{props.children}</div>
+          <div className="container flex flex-col px-5 py-12 mx-auto max-w-screen-sm">
+            {props.children}
+          </div>
         </section>
       </main>
       <Footer />
@@ -18,9 +20,7 @@ function Layout(props) {
   );
 }
 
-Layout.propTypes = {
-};
-Layout.defaultProps = {
-};
+Layout.propTypes = {};
+Layout.defaultProps = {};
 
 export default Layout;

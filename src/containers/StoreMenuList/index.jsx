@@ -44,7 +44,10 @@ class StoreMenuList extends React.Component {
   }
 
   handleClickTabItem(value) {
-    this.setState({ selectedDay: value });
+    this.setState((prevState) => ({
+      selectedDay: value,
+      menus: prevState.allMenus[value] || [],
+    }));
   }
 
   fetchMenus() {
