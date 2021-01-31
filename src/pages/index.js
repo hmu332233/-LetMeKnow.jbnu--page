@@ -6,7 +6,7 @@ import StoreMenuList from '@containers/StoreMenuList';
 
 // markup
 const IndexPage = (props) => {
-  const store = props.pageContext.store;
+  const store = props.pageContext.store || { value: 'cham' };
   return (
     <Layout>
       <StoreSelect value={store.value} />
