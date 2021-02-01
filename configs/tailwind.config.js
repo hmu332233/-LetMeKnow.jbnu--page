@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: ['./src/**/*'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -9,4 +9,4 @@ module.exports = {
     margin: ['responsive', 'first'],
   },
   plugins: [],
-}
+};
