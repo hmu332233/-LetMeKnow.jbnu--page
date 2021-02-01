@@ -8,13 +8,16 @@ import MenuList from '@components/MenuList';
 import LoadAnimation from '@components/LoadAnimation';
 
 import _mapValues from 'lodash/mapValues';
+
+const DAY_OF_WEEK = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
 class StoreMenuList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       allMenus: {},
       menus: [],
-      selectedDay: 'mon',
+      selectedDay: DAY_OF_WEEK[new Date().getDay()],
       isLoading: true,
     };
 
