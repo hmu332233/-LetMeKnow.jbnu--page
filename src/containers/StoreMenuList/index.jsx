@@ -14,10 +14,11 @@ const DAY_OF_WEEK = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 class StoreMenuList extends React.Component {
   constructor(props) {
     super(props);
+    const now = new Date();
     this.state = {
       allMenus: {},
       menus: [],
-      selectedDay: DAY_OF_WEEK[new Date().getDay()],
+      selectedDay: DAY_OF_WEEK[now.getDay()],
       isLoading: true,
     };
 
@@ -26,12 +27,7 @@ class StoreMenuList extends React.Component {
   }
 
   componentDidMount() {
-    this.setState(
-      {
-        selectedDay: DAY_OF_WEEK[new Date().getDay()],
-      },
-      this.fetchMenus
-    );
+    this.fetchMenus();
   }
 
   handleClickTabItem(value) {
