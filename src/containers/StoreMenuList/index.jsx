@@ -26,7 +26,12 @@ class StoreMenuList extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchMenus();
+    this.setState(
+      {
+        selectedDay: DAY_OF_WEEK[new Date().getDay()],
+      },
+      this.fetchMenus
+    );
   }
 
   handleClickTabItem(value) {
