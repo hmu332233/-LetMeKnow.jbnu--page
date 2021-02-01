@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'help-jbnu--page',
+    siteUrl: `https://help-jbnu.minung.dev`,
+    title: `알려줘전북대`,
+    description: `전북대생을 위한 정보 챗봇. 알려줘전북대의 웹페이지입니다.`,
   },
   plugins: [
     {
@@ -28,7 +30,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        name: `알려줘전북대`,
+        short_name: `알전`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#f59f0b`,
+        display: `minimal-ui`,
+        icon: 'src/images/logo.png',
       },
     },
     'gatsby-transformer-sharp',
