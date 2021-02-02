@@ -55,7 +55,7 @@ class StoreMenuList extends React.Component {
         return menus.map((menu) => ({
           subTitle: menu.place,
           title: menu.category ? `${menu.time} (${menu.category})` : menu.time,
-          menu: menu.menus.split(' ').join('\n'),
+          menu: menu.menus?.split(' ').join('\n') || '등록된 메뉴가 없습니다.',
         }));
       });
       this.setState({
