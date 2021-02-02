@@ -31,11 +31,11 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: `알려줘전북대`,
-        short_name: `알전`,
+        short_name: `알려줘전북대`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#f59f0b`,
-        display: `minimal-ui`,
+        display: `fullscreen`,
         icon: 'src/images/logo.png',
       },
     },
