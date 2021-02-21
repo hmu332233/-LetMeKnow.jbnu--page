@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Menu({ subTitle, title, menu }) {
   return (
-    <div class="px-4 w-1/3 text-center">
+    <div class="px-2 w-1/3 text-center">
       <h2 class="tracking-widest text-xs title-font font-medium text-yellow-500 mb-1">
         {subTitle}
       </h2>
