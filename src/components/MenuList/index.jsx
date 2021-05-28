@@ -5,8 +5,8 @@ import Menu from '@components/Menu';
 
 function MenuList(props) {
   return (
-    <section class="text-gray-600 body-font">
-      <div class="flex flex-wrap justify-around -mx-2">
+    <section className="text-gray-600 body-font">
+      <div className="flex flex-wrap justify-around -mx-2">
         {props.menus.map(({ subTitle, title, menu }) => (
           <Menu
             key={subTitle + title}

@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 
 import MemuApi from '@api/MenuApi';
 
-import DayTabHeader from '@containers/DayTabHeader';
+import DayTabHeader from '@components/DayTabHeader';
 import MenuList from '@components/MenuList';
 import LoadAnimation from '@components/LoadAnimation';
 
